@@ -1,0 +1,95 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap');
+
+@layer base {
+  * {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+  }
+
+  html,
+  body,
+  #root {
+    height: 100%;
+  }
+
+  body {
+    font-family: 'Inter', system-ui, sans-serif;
+    background: #0d0d1a;
+    color: #e2e8f0;
+    -webkit-font-smoothing: antialiased;
+  }
+
+  ::-webkit-scrollbar {
+    width: 5px;
+  }
+
+  ::-webkit-scrollbar-track {
+    background: rgba(255, 255, 255, 0.03);
+  }
+
+  ::-webkit-scrollbar-thumb {
+    background: rgba(124, 58, 237, 0.5);
+    border-radius: 3px;
+  }
+}
+
+@layer components {
+
+  .badge-easy {
+    @apply inline-flex items-center px-2.5 py-0.5 rounded-full text-xs font-bold border bg-emerald-500/15 text-emerald-400 border-emerald-500/30;
+  }
+
+  .badge-medium {
+    @apply inline-flex items-center px-2.5 py-0.5 rounded-full text-xs font-bold border bg-amber-500/15 text-amber-400 border-amber-500/30;
+  }
+
+  .badge-hard {
+    @apply inline-flex items-center px-2.5 py-0.5 rounded-full text-xs font-bold border bg-red-500/15 text-red-400 border-red-500/30;
+  }
+
+  .custom-cb {
+    @apply appearance-none w-5 h-5 rounded border-2 border-white/20 bg-white/5 cursor-pointer transition-all duration-200;
+    @apply checked:bg-emerald-500 checked:border-emerald-500;
+    position: relative;
+  }
+
+  .custom-cb:checked::after {
+    content: '✓';
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    color: white;
+    font-size: 11px;
+    font-weight: 900;
+  }
+
+  .link-yt {
+    @apply text-xs font-semibold px-2.5 py-1 rounded-md border bg-red-500/15 text-red-400 border-red-500/25 hover:bg-red-500/25 transition-colors no-underline;
+  }
+
+  .link-code {
+    @apply text-xs font-semibold px-2.5 py-1 rounded-md border bg-indigo-500/15 text-indigo-400 border-indigo-500/25 hover:bg-indigo-500/25 transition-colors no-underline;
+  }
+
+  .progress-track {
+    @apply w-full h-1.5 rounded-full overflow-hidden bg-white/10;
+  }
+
+  .progress-fill {
+    @apply h-full rounded-full bg-gradient-to-r from-violet-500 to-blue-500 transition-all duration-700;
+  }
+
+  .glass {
+    @apply bg-white/[0.04] border border-white/[0.08] rounded-xl;
+  }
+
+  .spinner {
+    @apply w-10 h-10 rounded-full border-2 border-violet-500/20 border-t-violet-500 animate-spin;
+  }
+}
